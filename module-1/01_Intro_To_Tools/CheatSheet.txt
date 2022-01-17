@@ -1,0 +1,31 @@
+Shell Commands
+Command					Description
+pwd						Prints out the current working directory
+ls						List the contents of a particular directory
+cd <name>				Change directory
+cd <name>/<subfolder>	Changes directory to a specific folder / subfolder
+cd ..					Go up a directory
+cd ~					Go to the user's home directory
+cd /					Go to the root directory
+mkdir <name>			Creates a new directory
+rmdir <name>			Removes a directory
+rm <file-name>			Removes a file by name
+
+Git Commands
+Command					Description
+git status				Status of the local repository compared to the server
+git pull origin main	This pulls from YOUR bitbucket repository. This will have what you push to it.
+git pull upstream main	This pulls from the java-base bitbucket repository. This will have lecture/solution and exercise code.
+
+To push your exercise code:
+
+Step 1: Add/stage files to commit using one of these commands:
+	git add -A (stage ALL of the changes to commit)
+	git add . (stage all changes in the current directory and below to commit)
+	git add <name> (stage a specific file or directory to commit)
+	
+Step 2: Commit to Local Repo
+	git commit -m "a useful message"   (Note: if you forget the -m, git bash will pause and open visual studio code for you to type a commit message in. Type a message, save and close for your commit to continue)
+	
+Step 3: Push to Server Repo
+	git push origin main (You can go to the bitbucket website after you complete this step to confirm)
