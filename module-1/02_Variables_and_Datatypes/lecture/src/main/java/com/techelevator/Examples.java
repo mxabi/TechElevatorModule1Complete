@@ -3,9 +3,23 @@ package com.techelevator;
 public class Examples {
 
 	public static void main(String[] args) {
-		
+		//Java data types: boolean, byte, short, int, long, float, double, char
+		//boolean - true or false
+		//byte - 8 bits
+		// short, int long - integer (no decimal of varying sizes small to big)
+		//float, double - numbers with a decimal place
+		// char - 0a single character ''
+
+		// not a primitive - String
 		// Variable declaration
+
 		int x;
+
+		//naming riles - camelCase the first character is lowercase and every subsequent word starts with uppercase
+		//nameOfTheVariable, numberOfStudents, minutesTillTheNextBreak
+		//sPongEBoBCase - not camel case
+
+		String nameOfInstructor;
 		
 		// Assignment statement
 		x = 3;
@@ -36,7 +50,11 @@ public class Examples {
 		int myInt = 123;
 		byte myByte = 3;
 		//myByte = myInt;  // causes a compiler error because the int variable is capable of holding values that won't fit in a byte
+		//implicit conversion - not losing data
 		myInt = myByte;
+
+		//explicit conversion - i'm okay with losing data
+		myByte = (byte) myInt;
 		
 		// Hexadecimal literals are preceded by 0x
 		int twentySix = 0x1A;
