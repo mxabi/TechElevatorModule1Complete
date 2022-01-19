@@ -1,7 +1,6 @@
 
 ---- VERIFYING PART 1 ---- 
 
-<<<<<<< HEAD
 ✅ 1. /c/Users/Student/playground exists
 ✅ 2. /c/Users/Student/playground/usa exists
 ✅ 3. /c/Users/Student/playground/canada exists
@@ -31,39 +30,4 @@ Errors: 0
 
 Congratulations! All tests in Part 1 are passing.
 Continue on to Part 2 in the README.
-=======
-✅ 1. /c/Users/KatieDwyer/playground exists
-✅ 2. /c/Users/KatieDwyer/playground/usa exists
-❗️ 3. /c/Users/KatieDwyer/playground/canada does not exist
-❗️ 4. /c/Users/KatieDwyer/playground/usa/ohio does not exist
-❗️ 5. /c/Users/KatieDwyer/playground/usa/pennsylvania does not exist
-❗️ 6. /c/Users/KatieDwyer/playground/usa/michigan does not exist
-❗️ 7. /c/Users/KatieDwyer/playground/canada/quebec does not exist
-❗️ 8. /c/Users/KatieDwyer/playground/canada/british-columbia does not exist
-❗️ 9. /c/Users/KatieDwyer/playground/usa/ohio/cuyahoga does not exist
-❗️ 10. /c/Users/KatieDwyer/playground/usa/ohio/hamilton does not exist
-❗️ 11. /c/Users/KatieDwyer/playground/usa/ohio/franklin does not exist
-❗️ 12. /c/Users/KatieDwyer/playground/usa/pennsylvania/allegheny does not exist
-❗️ 13. /c/Users/KatieDwyer/playground/usa/michigan/wayne does not exist
-❗️ 14. /c/Users/KatieDwyer/playground/usa/ohio/cuyahoga/cleveland.txt does not exist
-❗️ 15. /c/Users/KatieDwyer/playground/usa/ohio/hamilton/cincinnati.txt does not exist
-❗️ 16. /c/Users/KatieDwyer/playground/usa/ohio/franklin/columbus.txt does not exist
-❗️ 17. /c/Users/KatieDwyer/playground/usa/pennsylvania/allegheny/pittsburgh.txt does not exist
-❗️ 18. /c/Users/KatieDwyer/playground/usa/michigan/wayne/detroit.txt does not exist
-❗️ 19. /c/Users/KatieDwyer/playground/canada/quebec/montreal.txt does not exist
-❗️ 20. /c/Users/KatieDwyer/playground/canada/quebec/quebec-city.txt does not exist
-❗️ 21. /c/Users/KatieDwyer/playground/canada/british-columbia/vancouver.txt does not exist
-❗️ 22. /c/Users/KatieDwyer/playground/canada/british-columbia/prince-george.txt does not exist
-
-Total tests: 22
-Tests passed: 2
-Errors: 20
-
- You still need to make a few more changes.
- If you are having difficulty troubleshooting, try the following:
- - Use 'pwd' to print out your current working directory.
- - Check for typos in the names of folders or file paths.
- - When changing directories, '..' means up one directory. '.' means the current directory.
- - Reference Finder (Mac) or Explorer (PC) to make sure everything is in the correct location.
->>>>>>> 195c3390cc757d1876a6f7dd443ade93410f627b
 
