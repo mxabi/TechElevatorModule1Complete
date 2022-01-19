@@ -1,0 +1,279 @@
+package com.techelevator;
+
+public class Examples {
+
+    public static double addDouble(double a, double b) {
+        return a + b;
+    }
+
+    public static int addInt(int a, int b) {
+        return a + b;
+    }
+
+    public static String message(int age, String name) {
+        System.out.println("in method message");
+        return "Happy birthday, " + name + "you are " + age;
+    }
+
+    public static void main(String[] args) {
+
+        double add = addDouble(1.1, 2.3);
+        System.out.println(add);
+        double lilysDouble = 9.9;
+        double add2 = addDouble(lilysDouble, lilysDouble);
+        double tryInt = addDouble(1, 1);
+        //int addInt = addInt(1.0,2.0);
+        //String bDay = message("Kevin",21); params MUST be in the correct order
+        String bDay = message(21, "Kevin");
+        System.out.println(bDay);
+        System.out.println(message(21, "Deserae"));
+
+        //expression is made up of variables, operators, calling methods, etc that evaluates to a value
+        //statement is a unit of execution
+        int someRandomVariable = 5 + 3 - 10 * 1000;
+
+        //block of code
+        {
+            int declaredInBlock = 5;
+        }
+        //System.out.println(declaredInBlock);
+        //variables declared within a block of code are no longer accessible/in scope outside of the block
+
+        //System.out.println(randomUndeclared);
+        {
+            someRandomVariable = 2;
+        }
+        System.out.println("Some random variable will be 2 here: " + someRandomVariable);
+
+        // declaration statement for a variable named "result" of type boolean
+        boolean result;
+
+        //a method is like a math function
+        // f(n) = n*3;
+
+        //method:
+        // public returnType(int, boolean, String,...) methodNameInCamelCase (parameter list){
+        //    guts of the method
+        // }
+
+        //call my method
+        printGreeting("Katie");
+        String name = "Scott";
+        printGreeting(name);
+
+        //boolean expression evaluates to true or false
+        boolean isClassFun = true;
+        //boolean expressions are made of comparison operators and logical operators
+
+        System.out.println("****************************");
+        System.out.println("*** COMPARISON OPERATORS ***");
+        System.out.println("*** <, <=, >, >=, ==, != ***");
+        System.out.println("****************************");
+        System.out.println();
+		/*
+		 ==  Equal to
+		 !=  Not equal to
+		*/
+        result = (2 == 2);
+        System.out.println("2 == 2 : " + result);
+        result = (2 == 3);
+        System.out.println("2 == 3 : " + result);
+        result = ('a' == 'a');
+        System.out.println("'a' == 'a' : " + result);
+        result = ('a' == 'b');
+        System.out.println("'a' == 'b' : " + result);
+        result = (2 != 2);
+        System.out.println("2 != 2 : " + result);
+        result = (2 != 3);
+        System.out.println("2 != 3 : " + result);
+        result = ('a' != 'a');
+        System.out.println("'a' != 'a' : " + result);
+        result = ('a' != 'b');
+        System.out.println("'a' != 'b' : " + result);
+        System.out.println();
+
+		/*
+		 >  Greater than
+		 <  Less than
+		 >= Greater than or equal to
+		 <= Less than or equal to
+		*/
+        result = (2 > 1);
+        System.out.println("2 > 1 : " + result);
+        result = (2 < 2);
+        System.out.println("2 < 2 : " + result);
+        result = (2 <= 2);
+        System.out.println("2 <= 2 : " + result);
+        result = (2 <= 3);
+        System.out.println("2 <= 3 : " + result);
+        result = (5 >= 5);
+        System.out.println("5 >= 5 : " + result);
+        System.out.println();
+
+        //use a boolean expression when declaring the variable
+        boolean someGreatVariableName = 5 < 10;
+
+
+        System.out.println("*************************");
+        System.out.println("*** LOGICAL OPERATORS ***");
+        System.out.println("*************************");
+        System.out.println();
+		/*
+		 &&  AND
+		 ||  OR
+		 !  NOT
+		 ^  XOR  (exclusive OR)
+		 */
+        result = true && true;
+        System.out.println("true && true : " + result);
+        result = true && false;
+        System.out.println("true && false : " + result);
+        result = false && false;
+        System.out.println("false && false : " + result);
+
+        result = true || true;
+        System.out.println("true || true : " + result);
+        result = true || false;
+        System.out.println("true || false : " + result);
+        result = false || false;
+        System.out.println("false || false : " + result);
+
+        result = !true;
+        System.out.println("!true : " + result);
+        result = !false;
+        System.out.println("!false : " + result);
+
+        result = true ^ true;
+        System.out.println("true ^ true : " + result);
+        result = true ^ false;
+        System.out.println("true ^ false : " + result);
+        result = false ^ false;
+        System.out.println("false ^ false : " + result);
+        System.out.println();
+
+        System.out.println("***************************");
+        System.out.println("*** BOOLEAN EXPRESSIONS ***");
+        System.out.println("***************************");
+        System.out.println();
+
+        int value = 100;
+        result = (value > 200) || (value < 500);
+        System.out.println("(value > 200) || (value < 500) : " + result);
+
+        result = (value > 200) && (value < 500);
+        System.out.println("(value > 200) && (value < 500) : " + result);
+
+        result = !(value >= 300);
+        System.out.println("!(value >= 300) : " + result);
+
+        System.out.println("*******************************");
+        System.out.println("*** SHORT CIRCUIT OPERATORS ***");
+        System.out.println("*******************************");
+        System.out.println();
+
+        int x = 3;
+        int y = 0;
+        // result = (y > 0) && (x / y) > 2;  // causes a divide by zero exception to be thrown
+        result = (y > 0) && (x / y) > 2;
+        //result = x/y > 2;
+        System.out.println(result);
+
+        System.out.println("*******************************");
+        System.out.println("*** IF STATEMENTS ***");
+        System.out.println("*******************************");
+        System.out.println();
+
+        //----------------------------------------------------
+
+        System.out.println("*** Basic if statement ***");
+        // if (something that evaluates to true or false) {
+        //    stuff to do if true
+        // }
+
+        int freezingPointFahrenheit = 32;
+        int outsideTempFahrenheit = 80;
+        if (outsideTempFahrenheit <= freezingPointFahrenheit) {
+            System.out.println("Would you like a nice hot cup of coffee?");
+        } else {
+            System.out.println("Would you like a cool, refreshing iced mocha?");
+        }
+
+        //----------------------------------------------------
+
+        System.out.println("*** if-else statement ***");
+
+        boolean condition1 = true;
+        boolean condition2 = true;
+        if (condition1) {
+            System.out.println("Condition 1 is true!");
+        } else if (condition2) { //since this is the else, i KNOW condition1 was false
+            System.out.println("Condition 2 is true!");
+        } else {
+            System.out.println("No conditions are true!");
+        }
+
+        //----------------------------------------------------
+
+        System.out.println("*** a boolean variable is valid boolean expression ***");
+
+        boolean isSunny = true;
+        if (isSunny) {
+            System.out.println("Better wear some sun screen...");
+        }
+
+        //----------------------------------------------------
+
+        System.out.println("*** if statements can be used with blocks ***");
+
+        if (outsideTempFahrenheit > freezingPointFahrenheit) {
+            System.out.println("Summer time!!!");
+        } else {
+            System.out.println("Dress in layers");
+            System.out.println("Wear gloves");
+            System.out.println("Wear hat");
+            System.out.println("Wear scarf");
+        }
+        //nested if statements
+        if (outsideTempFahrenheit > freezingPointFahrenheit) {
+
+            if (someRandomVariable > 5) {
+                System.out.println("here");
+            } else {
+                //this else goes with if(someRandomVariable)
+            }
+        } else {
+            //goes with the if from line 237
+        }
+
+        //bad practice, don't do this
+        if (true)
+            System.out.println("you don't have to have {} then its just the next line thats the if block");
+
+        System.out.println("*******************************");
+        System.out.println("*** VARIABLE SCOPE ***");
+        System.out.println("*******************************");
+        System.out.println();
+
+        int firstVariable = 2;
+        if (firstVariable > 0) {
+            int secondVariable = firstVariable;
+        }
+        //int thirdVariable = secondVariable * 2; // this will cause a compile error because secondVariable is not "in scope"
+        //int firstVariable = 3;  // this is a compiler error because we already have a variable named firstVariable in this scope
+        int secondVariable = 7; // this is allowed because there is no variable named secondVariable in this scope
+
+        boolean burnItDown = shouldBurnDownTheBuilding(14, 20);
+    }
+
+    public static void printGreeting(String name) {
+        System.out.println("Hello, " + name);
+    }
+
+    static boolean shouldBurnDownTheBuilding(int numberOfEmployees, int piecesOfCake) {
+        if (numberOfEmployees > piecesOfCake) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
