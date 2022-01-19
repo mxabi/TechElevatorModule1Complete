@@ -2,10 +2,40 @@ package com.techelevator;
 
 public class Examples {
 
+	public static void printGreeting(String name) {
+		System.out.println(name);
+	}
+
+	public static double addDouble(double a,double b) {
+		return a+b;
+	}
+	public static String message (int age, String name) {
+		return "Happy birthday " + name + " you are " + age;
+	}
+
 	public static void main(String[] args) {
+		//expressions can be made up of variables, operators, calling methods, etc.
+		//that evaluates to a value.
+		//a statement is a unit of execution
+		int z = 5+3-10 *1000;
+
+		double add = addDouble(1.1,2.3);
+		System.out.println(add);
+
+		printGreeting("Abeda");
+
+		String bDay = message(26, "Abeda");
+		System.out.println(bDay);
+
+		{
+			// block of code
+		}
 
 		// declaration statement for a variable named "result" of type boolean
 		boolean result;
+
+		// a method is like a math function
+		// f(n) = n*3;
 
 		System.out.println("****************************");
 		System.out.println("*** COMPARISON OPERATORS ***");
@@ -157,8 +187,10 @@ public class Examples {
 		//----------------------------------------------------
 
 		System.out.println("*** if statements can be used with blocks ***");
-
+		//nested if statements
+		int someRandomVariable = 10;
 		if (outsideTempFahrenheit > freezingPointFahrenheit) {
+			if (someRandomVariable > 5){
 			System.out.println("Summer time!!!");
 		} else {
 			System.out.println("Dress in layers");
