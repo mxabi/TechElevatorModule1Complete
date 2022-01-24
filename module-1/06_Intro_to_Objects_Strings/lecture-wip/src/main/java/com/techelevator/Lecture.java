@@ -172,6 +172,11 @@ public class Lecture {
 	//s1 = "0123456789", s2="9993456789" =>yes
 	//s1 = "0123456789", s2="0124456789" =>no
 	public static boolean doStringMiddlesMatch (String s1, String s2, boolean caseSensitive){
-		return false;
-	}
+		String s1Sub = s1.substring(3,6);
+		String s2sub = s2.substring(3,6);
+		if (caseSensitive && s1Sub == s2sub){
+			return true;
+		}
+		return s1.equalsIgnoreCase(s2)
+;	}
 }

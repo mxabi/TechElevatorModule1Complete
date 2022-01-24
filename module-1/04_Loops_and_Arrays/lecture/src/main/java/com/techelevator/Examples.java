@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Examples {
 
 	public static void main(String[] args) {
@@ -31,7 +33,7 @@ public class Examples {
 		System.out.println("x = 1");
 		x = 1;
 		System.out.println("y = x++");
-		y = x++;
+		y = x++; // vs y =++x;
 		System.out.println("x == " + x);
 		System.out.println("y == " + y);
 		System.out.println();
@@ -131,7 +133,7 @@ public class Examples {
 		trees[1] = "Maple";
 		System.out.println(trees[1]);
 
-		int[] intArray = new int[] { 1, 2, 3 }; // this is how we declare an array literal
+		int[] intArray = new int[]{1, 2, 3}; // this is how we declare an array literal
 		for (int ix = 0; ix < intArray.length; ix++) {
 			System.out.print(intArray[ix]);
 		}
@@ -139,17 +141,34 @@ public class Examples {
 		System.out.println();
 
 		// The same literal syntax would apply to an array of Strings
-		String[] stooges = new String[] { "Larry", "Curly", "Moe" };
+		String[] stooges = new String[]{"Larry", "Curly", "Moe"};
 
 		/* Arrays are Objects, so they are "passed by reference".  In other words. when assigning
 		 * the value of one array variable to another array variable, we are assigning a reference
 		 * to the same array to both */
-		char[] firstArray = new char[] { 'a', 'b', 'c' };
+		char[] firstArray = new char[]{'a', 'b', 'c'};
 		char[] secondArray = firstArray;
 
 		secondArray[0] = 'z';
 		System.out.println("firstArray[0]: " + firstArray[0]);
 		System.out.println("secondArray[0]: " + secondArray[0]);
 	}
-
 }
+	//still in main method
+	/*int[] myArray = new int[3];
+	myArray[0] = 99;
+	myArray[1] =100;
+	myArray[2] = 101;
+	int mid = getMiddleElement(mid);
+
+
+
+
+	public static int getMiddleElement(int[] array){
+		//find middle index
+		int mid = array.length/2;
+
+		//return the element thats at the middle index
+		return array[mid];
+	}
+}*/
