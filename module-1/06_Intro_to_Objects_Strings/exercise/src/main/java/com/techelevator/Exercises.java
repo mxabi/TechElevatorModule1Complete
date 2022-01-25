@@ -331,9 +331,16 @@ public class Exercises {
 	 doubleX("xxxxx") → true
 	 */
 	public boolean doubleX(String str) {
+		for (int i = 0; i < str.length() - 1; i++) {
+			if (str.charAt(i) == 'x') {
+				if (str.charAt(i + 1) == 'x') {
+					return true;
+				}
+			}
+			return false;
+		}
 		return false;
 	}
-
 	/*
 	 Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
 	 stringBits("Hello") → "Hlo"
@@ -388,10 +395,10 @@ public class Exercises {
 		int len = str.length();
 		for (int i=0; i<len; i++){
 			if(str.contains("x")){
-				stringX = str.
+				stringX = str;
 			}
 		}
-		return null;
+		return stringX;
 	}
 
 	/*
@@ -412,7 +419,21 @@ public class Exercises {
 	 stringYak("yak123ya") → "123ya"
 	 */
 	public String stringYak(String str) {
-		return null;
+		// Want to return a string without word "yak"
+		//Need to search through string
+		//String replace with empty string
+		//str.replace("yak", "") --> return new string
+
+		int len = str.length();
+		String newString = "";
+		for (int i=0; i< len-2; i++){
+			if(str.charAt(i) == 'y' && str.charAt(i+2) == 'k'){
+				i = i+2;
+			} else {
+				newString = newString + str.charAt(i);
+		}
+		}
+		return newString;
 	}
 
 }
