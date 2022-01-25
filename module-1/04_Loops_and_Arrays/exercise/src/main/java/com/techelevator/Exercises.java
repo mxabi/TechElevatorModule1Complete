@@ -114,16 +114,15 @@ public class Exercises {
 	 */
 	public int[] maxEnd3(int[] nums) {
 		int[] maxElements = new int[3];
-		if (nums.length==3) {
-			if ( nums[0] > nums[2]){
+		if (nums[0] >= nums[nums.length -1]) {
 				maxElements[0] = nums[0];
 				maxElements[1]= nums[0];
 				maxElements[2]=nums[0];
 			}
-		} else {
-				maxElements[0] = nums[2];
-				maxElements[1]= nums[2];
-				maxElements[2]=nums[2];
+		else if (nums[0] <=nums[nums.length-1]){
+				maxElements[0] = nums[nums.length-1];
+				maxElements[1]= nums[nums.length-1];
+				maxElements[2]=nums[nums.length-1];
 	}return maxElements;
 }
 /*
@@ -134,13 +133,14 @@ public class Exercises {
 	 sum2([1, 1, 1, 1]) → 2
 	 */
 	public int sum2(int[] nums) {
-		int sum1 = nums[0] + nums[1];
-		if (nums.length >=2) {
-			return sum1;
-		} else if (nums.length < 2 && nums.length >0) {
-			return sum1;
-		} else {
+		if (nums.length ==0) {
 			return 0;
+		}
+		if (nums.length ==1) {
+			return nums[0];
+		}
+		else {
+			return nums[0]+nums[1];
 		}
 	}
 	/*
@@ -235,14 +235,12 @@ public class Exercises {
 	 lucky13([1, 2, 4]) → false
 	 */
 	public boolean lucky13(int[] nums) {
-		for (int i = 0; i<nums.length; i++){
-			if(nums[i] !=1 && nums[i] !=3){
-				return true;
-			}
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 1 || nums[i] == 3)
+				return false;
 		}
-		return false;
+		return true;
 	}
-
 	/*
 	 15. Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
 	 sum28([2, 3, 2, 2, 4, 2]) → true
