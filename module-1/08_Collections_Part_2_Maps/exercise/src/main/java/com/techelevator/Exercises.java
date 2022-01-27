@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class Exercises {
@@ -34,9 +35,26 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
-	}
+		Map<String, String> animalGroupName = new HashMap<>();
+		animalGroupName.put("rhino", "Crash");
+		animalGroupName.put("giraffe", "Tower");
+		animalGroupName.put("elephant", "Herd");
+		animalGroupName.put("lion", "Pride");
+		animalGroupName.put("crow", "Murder");
+		animalGroupName.put("pigeon", "Kit");
+		animalGroupName.put("flamingo", "Pat");
+		animalGroupName.put("deer", "Herd");
+		animalGroupName.put("dog", "Pack");
+		animalGroupName.put("crocodile", "Float");
 
+
+		if (animalName!= null && animalGroupName.containsKey(animalName.toLowerCase())){
+			String groupName = animalGroupName.get(animalName.toLowerCase());
+			return groupName;
+		} else {
+			return "unknown";
+		}
+	}
 	/*
 	 * Given an String item number (a.k.a. SKU), return the discount percentage if the item is on sale.
 	 * If the item is not on sale, return 0.00.
@@ -60,7 +78,20 @@ public class Exercises {
 	 *
 	 */
 	public double isItOnSale(String itemNumber) {
-		return -1.0;
+		Map<String, Double> discountPercentage = new HashMap<>();
+		discountPercentage.put("KITCHEN4001", 0.20);
+		discountPercentage.put("GARAGE1070", 0.15);
+		discountPercentage.put("LIVINGROOM", 0.10);
+		discountPercentage.put("KITCHEN6073", 0.40);
+		discountPercentage.put("BEDROOM3434", 0.60);
+		discountPercentage.put("BATH0073", 0.15);
+
+		if (itemNumber != null && discountPercentage.containsKey(itemNumber.toUpperCase())){
+			double discount = discountPercentage.get(itemNumber.toUpperCase());
+			return discount;
+		} else {
+			return 0.00;
+		}
 	}
 
 	/*
@@ -74,7 +105,30 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		Map<String, Integer> modifiedMap = new HashMap<>();
+		// if Paul's money (Integer input in hashmap) < 1000
+		//then transfer half of peters money to Paul
+		//Want to loop through peterPaul
+
+		int paulMoney = peterPaul.get("Paul");
+		int peterMoney = peterPaul.get("Peter");
+
+		if (peterMoney > 0 && paulMoney < 1000) {
+			if (peterMoney % 2 == 0){
+				peterMoney = peterMoney/2;
+				paulMoney =peterMoney + paulMoney;
+				peterMoney++;
+			} else if (peterMoney > 0 && paulMoney < 1000){
+				peterMoney = peterMoney/2;
+				paulMoney = peterMoney + paulMoney;
+			} else {
+				return peterPaul;
+			}
+		}
+		peterPaul.put("Peter", peterMoney);
+		peterPaul.put("Paul", paulMoney);
+
+		return peterPaul;
 	}
 
 	/*

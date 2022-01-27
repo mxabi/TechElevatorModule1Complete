@@ -179,7 +179,7 @@ public class Exercises {
 	public String withoutEnd2(String str) {
 		int mid = str.length() / 2;
 		if (str.length() > 3) {
-			return str.substring(mid - 1, mid + 2);
+			return str.substring(1,str.length()-1);
 		}
 		if (str.length() == 3) {
 			return str.substring(mid, mid + 1);
@@ -207,13 +207,16 @@ public class Exercises {
 	 endsLy("oddy") → false
 	 */
 	public boolean endsLy(String str) {
-		String lastTwo = str.substring(str.length()-2);
-		if (str.length() < 2){
+		int len = str.length();
+		String ly = "ly";
+		if (len < 2){
 			return false;
 		}
-		else if (lastTwo.equalsIgnoreCase("ly")) {
+		else if (ly.equalsIgnoreCase(str.substring(len-2,len))) {
 			return true;
-			}return false;
+		} else {
+			return false;
+		}
 	}
 	/*
 	 Given a string and an int n, return a string made of the first and last n chars from the string. The
@@ -237,11 +240,12 @@ public class Exercises {
 	 twoChar("java", 3) → "ja"
 	 */
 	public String twoChar(String str, int index) {
-		if (index > str.length()) {
-
-		}return str.substring(index);
+		if (index + 2 > str.length() || (index < 0)) {
+			return str.substring(0, 2);
+		} else {
+			return str.substring(index, index +2);
+		}
 	}
-
 	/*
 	 Given a string of odd length, return the string length 3 from its middle, so "Candy" yields "and".
 	 The string length will be at least 3.
@@ -265,7 +269,8 @@ public class Exercises {
 	 hasBad("xxbadxx") → false
 	 */
 	public boolean hasBad(String str) {
-		if (str.substring(0,str.length()).equalsIgnoreCase("bad") || str.substring(1,str.length()).equalsIgnoreCase("bad")){
+		// if bad appears at index 0 or 1 return true
+		if (str.substring(0,2).equals("bad") || str.substring(1,4).equals("bad")){
 			return true;
 		}
 		return false;
@@ -316,8 +321,8 @@ public class Exercises {
 	public int countXX(String str) {
 		int len = str.length();
 		int counter = 0;
-		for (int i = 0; i<len;i++){
-			if(str.contains("xx")){
+		for (int i = 0; i<len-1;i++){
+			if(str.substring(i,i+2).equals("xx")){
 				counter++;
 			}
 		}
@@ -331,13 +336,11 @@ public class Exercises {
 	 doubleX("xxxxx") → true
 	 */
 	public boolean doubleX(String str) {
-		for (int i = 0; i < str.length() - 1; i++) {
-			if (str.charAt(i) == 'x') {
-				if (str.charAt(i + 1) == 'x') {
+		for (int i = 0; i < str.length()-1; i++) {
+			String x = str.substring(i);
+			if (x.startsWith("xx")) {
 					return true;
-				}
 			}
-			return false;
 		}
 		return false;
 	}
@@ -363,13 +366,12 @@ public class Exercises {
 	 stringSplosion("ab") → "aab"
 	 */
 	public String stringSplosion(String str) {
-		String newString2 = "";
+		String splodedString = "";
 		int len = str.length();
-
-		for(int i = 0; i<len; i++){
-
+		for(int i = 0; i<len+1; i++){
+			splodedString += str.substring(0,i);
 		}
-		return newString2;
+		return splodedString;
 	}
 
 	/*
@@ -380,7 +382,19 @@ public class Exercises {
 	 last2("axxxaaxx") → 2
 	 */
 	public int last2(String str) {
-		return 0;
+		if(str.length() <2){
+			return 0;
+		}
+		String end = str.substring(str.length()-2);
+		int count = 0;
+
+		for (int i=0;i< str.length()-2; i++){
+			String sub = str.substring(i,i+2);
+			if (sub.equals(end)) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	/*
@@ -408,9 +422,15 @@ public class Exercises {
 	 altPairs("CodingHorror") → "Congrr"
 	 */
 	public String altPairs(String str) {
-		return null;
+		String alts = "";
+		for (int i = 0; i < str.length(); i += 4) {
+			int end = i + 2;
+			if (end > str.length()) {
+				end = str.length();
+			}
+			alts += str.substring(i, end);
+		}return alts;
 	}
-
 	/*
 	 Suppose the string "yak" is unlucky. Given a string, return a version where all the "yak" are removed.
 	 The "yak" strings will not overlap.
@@ -426,14 +446,11 @@ public class Exercises {
 
 		int len = str.length();
 		String newString = "";
-		for (int i=0; i< len-2; i++){
-			if(str.charAt(i) == 'y' && str.charAt(i+2) == 'k'){
-				i = i+2;
-			} else {
-				newString = newString + str.charAt(i);
+		for (int i=0; i< len; i++){
+			if(str.contains("yak")){
+				newString =str.replace("yak","");
 		}
 		}
 		return newString;
 	}
-
 }
