@@ -11,7 +11,7 @@ public class TempConvert {
 
 		System.out.println("Welcome to Temp Converter");
 
-		System.out.println("Enter temperature in Fahrenheit: ");
+		System.out.println("Enter temperature : ");
 		int temp = scan.nextInt();
 		scan.nextLine();
 

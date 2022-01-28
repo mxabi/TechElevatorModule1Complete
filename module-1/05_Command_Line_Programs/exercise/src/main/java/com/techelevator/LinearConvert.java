@@ -6,29 +6,55 @@ public class LinearConvert {
 
 	public static void main(String[] args) {
 
+
+		try (Scanner scanner = new Scanner(System.in)) {
+			System.out.println("Please enter the length:");
+
+			String length = scanner.nextLine();
+
+			double lengthConvert = Double.parseDouble(length);
+
+			System.out.println("Is the length in (m)eter or (f)eet ?");
+
+			String unit = scanner.nextLine();
+
+			if (unit.equals("m")) {
+				lengthConvert = lengthConvert * 3.2808399;
+				int foot = (int) lengthConvert;
+				System.out.println(length + "m" + " " + "is" + " " + foot + "f");
+
+			}
+			if (unit.equals("f")) {
+				lengthConvert = lengthConvert * 0.3048;
+				int meters = (int) lengthConvert;
+				System.out.println(length + "f" + " " + "is" + " " + meters + "m");
+
+			}
+		}
+
+
+
+		/*
 		Scanner scan = new Scanner(System.in);
 
 		System.out.println("Enter the length: ");
-		double len = scan.nextInt();
+		double len = scan.nextDouble();
 
 		System.out.println("Is this in meters or feet?");
-		String length = scan.nextLine().toLowerCase();
+		String unit = scan.nextLine();
 
-		System.out.println("the original length was: " + len + "in " +length + " converted " +
-				" length is"+ doConversion(length,len));
+		double convertedLen = 0;
 
-	}
-
-	public static double doConversion(String length, double len) {
-		double convertedLen;
-		if (length.equals("meters")) {
-			convertedLen = (double) len * 0.348;
-			System.out.println("meters to feet conversion is: " + convertedLen);
+		if (unit.equals("meters")) {
+			convertedLen = len * 3.2808399;
+			System.out.println(len + " meters is " + convertedLen + "feet");
 		} else {
-			convertedLen = (double) len * 3.2808399;
-			System.out.println("feet to meters conversion is: " + convertedLen);
+			convertedLen =  len * 0.3048;
+			System.out.println(len +" feet is" + convertedLen + "meters");
 		}
-		return  convertedLen;
 	}
+	*/
 
+
+	}
 }
