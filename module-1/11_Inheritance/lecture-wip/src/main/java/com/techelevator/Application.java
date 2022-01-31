@@ -1,7 +1,11 @@
 package com.techelevator;
 
+import com.techelevator.shapes.Circle;
 import com.techelevator.shapes.Shape;
 import com.techelevator.shapes.Square;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Application {
 
@@ -24,8 +28,19 @@ public class Application {
         //to look there FIRST for the getPerimeter method
         System.out.println(sq3.getPerimeter());
 
+        Shape circle = new Circle(5,"red",true);
+        System.out.println(circle.getPerimeter());
 
+        List<Shape> myListOfShapes = new ArrayList<>();
+        myListOfShapes.add(square);
+        myListOfShapes.add(s2);
+        myListOfShapes.add(sq3);
+        myListOfShapes.add(circle);
 
+        for (Shape s : myListOfShapes){
+            double p = s.getPerimeter();
+            System.out.println("Perimeter" + p);
+        }
         /*
         // Create a new general auction
         System.out.println("Starting a general auction");

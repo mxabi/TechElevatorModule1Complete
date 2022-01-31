@@ -16,18 +16,26 @@ public class BaseballCoach {
         String strPlayerCount = scanner.nextLine();
         int playerCount = Integer.parseInt(strPlayerCount);
 
-        String[] playerNames = new String[playerCount];
-        double[] battingAverages = new double[playerCount];
+ //       String[] playerNames = new String[playerCount];
+ //       double[] battingAverages = new double[playerCount];
+
+        //don't want to have seperate arrays:
+        //  int[] playerAge;
+        //int[] playerJersey;
+
+        //instead create a baseball player class
+        //use that code
 
         //int[] timesAtBat  = new int[playerCount];
         //int[] hits = new int[playerCount];
 
+        BaseBallPlayer [] players = new BaseBallPlayer[playerCount];
         //for each player
         for (int i=0; i<playerCount; i++) {
             //  prompt for the players name
             System.out.println("Enter player "+i+" name: ");
             String playerName = scanner.nextLine();
-            playerNames[i] = playerName;
+            //playerNames[i] = playerName;
 
             //  prompt for the players times at bat
             //todo - the number of atbats must be positive
@@ -42,15 +50,19 @@ public class BaseballCoach {
                 String strHits = scanner.nextLine();
                 hits = Integer.parseInt(strHits);
             }
-
+                /*
             if (bats>0){
                 double battingAverage = (double)hits/bats;
-                battingAverages[i] = battingAverage;
+                //battingAverages[i] = battingAverage;
             } else {
                 battingAverages[i]=0;
             }
-
+                */
+            //once i have all the info, create a player and add it to the array
+            BaseBallPlayer player = new BaseBallPlayer(playerName, bats,hits);
+            players[i] =player;
         }
+
 
         System.out.println("Thank you. Here are your results: ");
 
@@ -59,7 +71,8 @@ public class BaseballCoach {
         for(int i = 0; i<playerCount; i++) {
             // print the players name and batting average (hits/at bat, 3 decimal places)
             //todo format this nicer
-            System.out.println("Name: "+playerNames[i]+" Batting Average: "+battingAverages[i]);
+           //System.out.println("Name: "+playerNames[i]+" Batting Average: "+battingAverages[i]);
+            System.out.println("Name " + players[i].getName() + " Batting Average: " + players[i].getPrettyBattingAvg());
         }
 
         //print the name of the player with the best batting average
