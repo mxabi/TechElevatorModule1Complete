@@ -1,7 +1,13 @@
 package com.techelevator.farm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OldMacdonald {
 	public static void main(String[] args) {
+
+		//Polymorphism is the idea that something can be given a different meaning or usage based on
+		//Different objects can be treated the same way
 
 
 		Cow cow = new Cow();
@@ -12,5 +18,9 @@ public class OldMacdonald {
 		System.out.println("Here a " + cow.getSound() + " there a " + cow.getSound() + " everywhere a " + cow.getSound() + " " + cow.getSound());
 		System.out.println();
 
+		Chicken chicken = new Chicken;
+
+		List<FarmAnimal> myfarms = new ArrayList<>();
+		myFarms.add(new Cow());
 	}
 }
