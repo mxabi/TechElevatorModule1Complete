@@ -12,7 +12,7 @@ public class SavingsAccount extends BankAccount {
     @Override
     public int withdraw(int amountToWithdraw) {
         int remainingBalance = super.getBalance() - amountToWithdraw;
-        if (remainingBalance >= 2) {
+        if (remainingBalance >= 0) {
             if (remainingBalance <= 150) {
                 return super.withdraw(amountToWithdraw + 2);
             }
