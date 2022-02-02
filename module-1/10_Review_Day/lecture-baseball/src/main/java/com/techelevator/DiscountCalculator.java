@@ -18,7 +18,7 @@ class DiscountCalculator {
 
         Scanner input = new Scanner(System.in);//required to read from the console
 
-        System.out.println("Welcome to the Discount Calculator");
+        System.out.println("Welcome to the Discount Calculator");Calculator
 
         // Prompt the user for a discount amount
         // The answer needs to be saved as a double
@@ -65,4 +65,4 @@ class DiscountCalculator {
 
     }
 
-}
+21zx}
