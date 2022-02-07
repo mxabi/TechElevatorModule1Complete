@@ -1,0 +1,7 @@
+blue,circle,1
+red,rectangle,2,2
+blue,triangle,1,3,4
+orange,circle,2
+bad text
+blue,circle,3
+BLUE,square,1
