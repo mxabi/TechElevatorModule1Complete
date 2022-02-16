@@ -2,3 +2,6 @@
 -- Expected answer is around 202,000
 -- (1 row)
 
+SELECT AVG(population) as average_washington_population
+from city
+WHERE city.state_abbreviation = 'WA';
