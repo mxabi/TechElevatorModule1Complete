@@ -265,12 +265,21 @@ JOIN person ON movie.director_id = person.person_id
 WHERE collection_name = 'Harry Potter Collection';
 
 -- 14. The names of actors who've appeared in the movies in the "Back to the Future Collection" (28 rows)
+
+--SELECT DISTINCT person_name
+--FRom movie
+--JOIN collection ON movie.collection_id = collection.collection_id
+--JOIN movie_actor ON movie.movie_id = movie_actor.movie_id
+--JOIN person ON movie_actor.actor_id = person.person_id
+--WHERE collection_name = 'Back to the Future Collection'
+
 SELECT DISTINCT person_name
-FRom movie
+FROM person
+JOIN movie_actor ON person.person_id = movie_actor.actor_id
+JOIN movie ON movie_actor.movie_id = movie.movie_id
 JOIN collection ON movie.collection_id = collection.collection_id
-JOIN movie_actor ON movie.movie_id = movie_actor.movie_id
-JOIN person ON movie_actor.actor_id = person.person_id
-WHERE collection_name = 'Back to the Future Collection'
+WHERE collection_name = 'Back to the Future Collection';
+
 
 
 -- 15. The title of the movie and the name of director for movies where the director was also an actor in the same movie (73 rows)
@@ -288,14 +297,14 @@ JOIN movie On movie_actor.movie_id = movie.movie_id
 WHERE movie.release_date BETWEEN '01-01-1985' AND '12-30-1985' AND person.birthday BETWEEN '01-01-1950' AND '12-30-1959'
 
 -- 17. The titles and taglines of movies that are in the "Family" genre and Samuel L. Jackson has acted in (4 rows)
-SELECT DISTINCT title, tagline, person_name
+SELECT title, tagline
 From movie
 JOIN movie_genre ON movie.movie_id = movie_genre.movie_id
 JOIN genre ON movie_genre.genre_id = genre.genre_id
 JOIN movie_actor ON movie.movie_id = movie_actor.movie_id
 JOIN person ON movie_actor.actor_id = person.person_id
-WHERE genre_name = 'Family' AND person_name LIKE 'Samuel L. Jackson'
-ORDER BY title ASC;
+WHERE genre_name = 'Family' AND person_name = 'Samuel L. Jackson'
+
 
 
 
@@ -324,12 +333,12 @@ GROUP BY genre_name;
 
 -- 20. The titles, lengths, and release dates of the 5 longest movies in the "Action" genre. Order the movies by length (highest first), then by release date (latest first).
 -- (5 rows, expected lengths around 180 - 200)
-SELECT title, length_minutes
+SELECT title, length_minutes, release_date
 From movie
 JOIN movie_genre ON movie.movie_id = movie_genre.movie_id
 JOIN genre ON movie_genre.genre_id = genre.genre_id
 WHERE genre_name = 'Action'
-ORDER BY length_minutes DESC
+ORDER BY length_minutes DESC, release_date DESC
 LIMIT 5;
 
 
@@ -337,12 +346,12 @@ LIMIT 5;
 
 -- 21. For every person in the person table with the first name of "George", list the number of movies they've been in--include all Georges, even those that have not appeared in any movies. Display the names in alphabetical order. (59 rows)
 -- Name the count column 'num_of_movies'
-SELECT person.person_name, COUNT(movie.movie_id) as num_of_movies
-From movie
-JOIN movie_actor ON movie.movie_id = movie_actor.movie_id
-JOIN person ON movie_actor.actor_id = person.person_id
+SELECT COUNT(movie_id) as num_of_movies, person_name, person.person_id
+From person
+LEFT JOIN movie_actor ON person.person_id = movie_actor.actor_id
 WHERE person_name LIKE 'George %'
-GROUP BY person.person_name;
+GROUP BY person_name, person.person_id
+ORDER BY person_name;
 
 
 
